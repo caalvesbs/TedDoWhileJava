@@ -1,0 +1,48 @@
+package WhileTed;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+import java.util.Scanner;
+
+    public class ExDoWhile  {
+        public static void main(String[] args) {
+            Scanner sc = new Scanner(System.in);
+            Locale.setDefault(Locale.US);
+
+            int numero, quantLidos = 0, soma = 0;
+            int quantP = 0, quantN = 0;
+
+            do {
+
+                System.out.print("Informe um número inteiro (0 para sair): ");
+                numero = Integer.parseInt(sc.nextLine());
+
+                if(numero > 0){
+                    quantP++;
+                }
+                else if(numero < 0){
+                    quantN++;
+                }
+
+                soma += numero;
+
+                if(numero != 0){
+                    quantLidos++;
+                }
+            }
+            while(numero != 0);
+
+            if(quantLidos == 0){
+                System.out.println("Você não informou nenhum número.");
+            }
+            else{
+                System.out.println("Quantidade de números positivos: " + quantP);
+                System.out.println("Quantidade de números negativos: " + quantN);
+                System.out.println("A soma dos números lidos é: " + soma);
+                System.out.println("A média aritmética é: " + ((soma * 1.0) / quantLidos));
+
+            }
+            sc.close();
+        }
+    }
